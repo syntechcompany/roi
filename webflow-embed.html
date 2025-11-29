@@ -1,0 +1,118 @@
+<!-- Creatio ROI Calculator -->
+<!-- Вставьте этот код в Webflow Embed element -->
+<!-- CSS и JS загружаются с GitHub -->
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://raw.githack.com/YOUR_USERNAME/YOUR_REPO/main/creatio-roi-calculator.css">
+
+<div class="roi-calculator">
+<div class="container">
+<header class="header"><h1>🚀 Creatio ROI Calculator</h1><p>Розрахуйте окупність інвестицій у CRM/ERP платформу</p></header>
+
+<section class="platform-section">
+<div class="section-label">Оберіть тарифний план</div>
+<div class="platform-cards">
+<label class="platform-card"><input type="radio" name="platform" class="platform-radio" value="growth"><div class="platform-title">Growth</div><div class="platform-price">750 ₴<span>/користувач/місяць</span></div><div class="platform-description">Для невеликих та середніх компаній</div><div class="platform-features"><span class="feature-tag">No-code</span><span class="feature-tag">5+ користувачів</span></div></label>
+<label class="platform-card selected"><input type="radio" name="platform" class="platform-radio" value="enterprise" checked><div class="platform-badge">Популярний</div><div class="platform-title">Enterprise</div><div class="platform-price">1 650 ₴<span>/користувач/місяць</span></div><div class="platform-description">Повний цикл автоматизації</div><div class="platform-features"><span class="feature-tag">Low-code</span><span class="feature-tag">API інтеграції</span></div></label>
+<label class="platform-card"><input type="radio" name="platform" class="platform-radio" value="unlimited"><div class="platform-title">Unlimited</div><div class="platform-price">2 550 ₴<span>/користувач/місяць</span></div><div class="platform-description">Необмежені можливості</div><div class="platform-features"><span class="feature-tag">Pro-code</span><span class="feature-tag">50+ користувачів</span></div></label>
+</div>
+</section>
+
+<div class="ai-banner"><div class="ai-icon">🤖</div><div class="ai-banner-text"><strong>Creatio AI</strong> включений у всі плани</div></div>
+
+<div class="user-quantity-section">
+<div class="quantity-label-group"><div class="quantity-icon">👥</div><div class="quantity-label-text"><h3>Користувачі платформи</h3><p>Мін. 5 (50 для Unlimited)</p></div></div>
+<div class="quantity-control"><button class="quantity-btn" onclick="decrementQuantity('platformQty')">−</button><input type="number" id="platformQty" class="quantity-input" value="10" min="5"><button class="quantity-btn" onclick="incrementQuantity('platformQty')">+</button></div>
+</div>
+
+<section class="section">
+<h2 class="section-title"><div class="section-title-icon">📦</div>Продукти</h2>
+<div class="product-grid">
+<div class="product-item" id="salesItem"><div class="product-header"><div class="product-checkbox-wrapper"><input type="checkbox" class="product-checkbox" id="salesCheck"><div class="checkbox-custom"></div></div><div class="product-info"><div class="product-title">Sales</div><div class="product-price">450 ₴<span>/користувач/міс</span></div></div></div><div class="product-description">Автоматизація продажів</div><div class="product-quantity" id="salesQuantity"><span style="color:var(--text-secondary);font-size:13px">Користувачів:</span><button class="quantity-btn" onclick="decrementQuantity('salesQty')">−</button><input type="number" id="salesQty" class="quantity-input" value="0" min="0"><button class="quantity-btn" onclick="incrementQuantity('salesQty')">+</button></div></div>
+<div class="product-item" id="marketingItem"><div class="product-header"><div class="product-checkbox-wrapper"><input type="checkbox" class="product-checkbox" id="marketingCheck"><div class="checkbox-custom"></div></div><div class="product-info"><div class="product-title">Marketing</div><div class="product-price">450 ₴<span>/користувач/міс</span></div></div></div><div class="product-description">Маркетингові кампанії</div><div class="product-quantity" id="marketingQuantity"><span style="color:var(--text-secondary);font-size:13px">Користувачів:</span><button class="quantity-btn" onclick="decrementQuantity('marketingQty')">−</button><input type="number" id="marketingQty" class="quantity-input" value="0" min="0"><button class="quantity-btn" onclick="incrementQuantity('marketingQty')">+</button></div></div>
+<div class="product-item" id="serviceItem"><div class="product-header"><div class="product-checkbox-wrapper"><input type="checkbox" class="product-checkbox" id="serviceCheck"><div class="checkbox-custom"></div></div><div class="product-info"><div class="product-title">Service</div><div class="product-price">450 ₴<span>/користувач/міс</span></div></div></div><div class="product-description">Підтримка клієнтів</div><div class="product-quantity" id="serviceQuantity"><span style="color:var(--text-secondary);font-size:13px">Користувачів:</span><button class="quantity-btn" onclick="decrementQuantity('serviceQty')">−</button><input type="number" id="serviceQty" class="quantity-input" value="0" min="0"><button class="quantity-btn" onclick="incrementQuantity('serviceQty')">+</button></div></div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title"><div class="section-title-icon">👤</div>Додаткові користувачі</h2>
+<div class="product-grid">
+<div class="product-item" id="limitedItem"><div class="product-header"><div class="product-checkbox-wrapper"><input type="checkbox" class="product-checkbox" id="limitedCheck"><div class="checkbox-custom"></div></div><div class="product-info"><div class="product-title">Limited User</div><div class="product-price">500 ₴<span>/користувач/міс</span></div></div></div><div class="product-description">Обмежений доступ</div><div class="product-quantity" id="limitedQuantity"><span style="color:var(--text-secondary);font-size:13px">Користувачів:</span><button class="quantity-btn" onclick="decrementQuantity('limitedQty')">−</button><input type="number" id="limitedQty" class="quantity-input" value="0" min="0"><button class="quantity-btn" onclick="incrementQuantity('limitedQty')">+</button></div></div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title"><div class="section-title-icon">🌐</div>Портал</h2>
+<div class="product-item" id="portalItem"><div class="product-header"><div class="product-checkbox-wrapper"><input type="checkbox" class="product-checkbox" id="portalCheck"><div class="checkbox-custom"></div></div><div class="product-info"><div class="product-title">Portal Users</div><div class="product-description">Пакет портальних користувачів</div></div></div>
+<div id="portalPackageContainer" style="display:none;margin-top:16px"><select id="portalPackage" class="custom-select"><option value="0">Без порталу</option><option value="250">250 — 16 667 ₴/міс</option><option value="1000">1 000 — 33 333 ₴/міс</option><option value="10000">10 000 — 66 667 ₴/міс</option><option value="50000">50 000 — 166 667 ₴/міс</option><option value="100000">100 000 — 250 000 ₴/міс</option><option value="unlimited">Без обмежень — 500 000 ₴/міс</option></select></div></div>
+</section>
+
+<section class="section">
+<h2 class="section-title"><div class="section-title-icon">🛠️</div>Підтримка</h2>
+<select id="supportLevel" class="custom-select"><option value="0">Базова — безкоштовно</option><option value="10">Розширена — 10%</option><option value="20">Преміум — 20%</option></select>
+</section>
+
+<section class="section">
+<h2 class="section-title"><div class="section-title-icon">⚙️</div>Впровадження</h2>
+<div class="roi-inputs-grid">
+<div class="input-group"><label>Вартість впровадження (₴)</label><input type="number" id="implementationCost" value="250000" min="0"><div class="input-hint">Одноразова вартість</div></div>
+<div class="input-group"><label>Додаткові витрати/рік (₴)</label><input type="number" id="additionalYearlyCost" value="50000" min="0"><div class="input-hint">Навчання, підтримка</div></div>
+</div>
+</section>
+
+<section class="section total-section">
+<h2 class="section-title"><div class="section-title-icon">💰</div>Загальна вартість (TCO)</h2>
+<div class="total-grid">
+<div class="total-item"><div class="total-item-label">Щомісячно</div><div class="total-item-value" id="totalMonthly">0 ₴</div><div class="total-item-sub">ліцензії</div></div>
+<div class="total-item"><div class="total-item-label">1 рік</div><div class="total-item-value" id="totalYear1">0 ₴</div><div class="total-item-sub">з впровадженням</div></div>
+<div class="total-item"><div class="total-item-label">3 роки</div><div class="total-item-value" id="totalYear3">0 ₴</div><div class="total-item-sub">TCO</div></div>
+<div class="total-item"><div class="total-item-label">На користувача</div><div class="total-item-value highlight" id="perUserYear">0 ₴</div><div class="total-item-sub">/рік</div></div>
+</div>
+<div class="warning-message" id="minCheckWarning"><span class="warning-icon">⚠️</span><span>Мін. контракт — 420 000 ₴/рік</span></div>
+</section>
+
+<section class="section roi-inputs-section">
+<h2 class="section-title"><div class="section-title-icon">📊</div>Бізнес-параметри для ROI</h2>
+<div class="roi-inputs-grid">
+<div class="input-group"><label>Угод/місяць</label><input type="number" id="monthlyDeals" value="30"><div class="input-hint">Закритих угод</div></div>
+<div class="input-group"><label>Середній чек (₴)</label><input type="number" id="avgDealSize" value="75000"><div class="input-hint">Сума угоди</div></div>
+<div class="input-group"><label>Конверсія (%)</label><input type="number" id="conversion" value="15" min="1" max="100"><div class="input-hint">Лід→угода</div></div>
+<div class="input-group"><label>Втрачені угоди (%)</label><input type="number" id="lostDeals" value="25" min="0" max="100"><div class="input-hint">Через хаос</div></div>
+<div class="input-group"><label>Зарплата (₴/міс)</label><input type="number" id="managerSalary" value="35000"><div class="input-hint">Менеджера</div></div>
+<div class="input-group"><label>Час на рутину (%)</label><input type="number" id="routineTime" value="40" min="0" max="100"><div class="input-hint">Рутинні задачі</div></div>
+<div class="input-group"><label>Маржа (%)</label><input type="number" id="profitMarginInput" value="25" min="1" max="100"><div class="input-hint">Прибутку</div></div>
+</div>
+</section>
+
+<button class="calculate-btn" id="calculateROI">📈 Розрахувати ROI</button>
+
+<div class="roi-results" id="roiResults">
+<section class="section">
+<h2 class="section-title"><div class="section-title-icon">🎯</div>Ключові показники</h2>
+<div class="roi-summary">
+<div class="roi-card primary"><div class="roi-card-icon">📈</div><div class="roi-card-title">ROI за 1 рік</div><div class="roi-card-value" id="roiYear1">0%</div><div class="roi-card-description">Повернення інвестицій</div></div>
+<div class="roi-card primary"><div class="roi-card-icon">🚀</div><div class="roi-card-title">ROI за 3 роки</div><div class="roi-card-value" id="roiYear3">0%</div><div class="roi-card-description">Кумулятивний ROI</div></div>
+<div class="roi-card success"><div class="roi-card-icon">⏱️</div><div class="roi-card-title">Окупність</div><div class="roi-card-value" id="paybackPeriod">0 міс</div><div class="roi-card-description">Термін окупності</div></div>
+<div class="roi-card success"><div class="roi-card-icon">💎</div><div class="roi-card-title">NPV (3 роки)</div><div class="roi-card-value" id="npvValue">0 ₴</div><div class="roi-card-description">Чиста приведена вартість</div></div>
+</div>
+</section>
+
+<div class="metrics-section">
+<div class="metrics-grid">
+<div class="metric-block"><div class="metric-block-title"><span>💵</span> Фінансовий ефект/рік</div><div class="metric-row"><div class="metric-label"><span>📈</span> Дохід від конверсії</div><div class="metric-value positive" id="additionalRevenue">0 ₴</div></div><div class="metric-row"><div class="metric-label"><span>🛡️</span> Збережений дохід</div><div class="metric-value positive" id="savedRevenue">0 ₴</div></div><div class="metric-row"><div class="metric-label"><span>⏰</span> Операційна економія</div><div class="metric-value positive" id="salarySavings">0 ₴</div></div><div class="metric-row"><div class="metric-label"><span>💰</span> <strong>Вигода (<span id="marginDisplay">25</span>% маржі)</strong></div><div class="metric-value positive" id="totalBenefit">0 ₴</div></div></div>
+<div class="metric-block"><div class="metric-block-title"><span>📊</span> Покращення</div><div class="metric-row"><div class="metric-label"><span>🎯</span> Нова конверсія</div><div class="metric-value neutral" id="newConversion">0%</div></div><div class="metric-row"><div class="metric-label"><span>📉</span> Нові втрати</div><div class="metric-value neutral" id="newLostDeals">0%</div></div><div class="metric-row"><div class="metric-label"><span>⚡</span> Економія часу</div><div class="metric-value neutral" id="timeSaved">0%</div></div><div class="metric-row"><div class="metric-label"><span>📦</span> Додаткові угоди</div><div class="metric-value positive" id="extraDeals">0</div></div><div class="progress-container"><div class="progress-label"><span>Ефективність</span><span id="efficiencyPercent">0%</span></div><div class="progress-bar"><div class="progress-fill" id="efficiencyBar" style="width:0%"></div></div></div></div>
+<div class="metric-block"><div class="metric-block-title"><span>💳</span> Витрати (1 рік)</div><div class="metric-row"><div class="metric-label"><span>📋</span> Ліцензії</div><div class="metric-value neutral" id="licenseCost">0 ₴</div></div><div class="metric-row"><div class="metric-label"><span>🛠️</span> Підтримка</div><div class="metric-value neutral" id="supportCost">0 ₴</div></div><div class="metric-row"><div class="metric-label"><span>⚙️</span> Впровадження</div><div class="metric-value neutral" id="implCost">0 ₴</div></div><div class="metric-row"><div class="metric-label"><span>➕</span> Додаткові</div><div class="metric-value neutral" id="addCost">0 ₴</div></div></div>
+<div class="metric-block"><div class="metric-block-title"><span>📅</span> Прогноз</div><div class="metric-row"><div class="metric-label"><span>1️⃣</span> Прибуток 1 рік</div><div class="metric-value" id="netYear1">0 ₴</div></div><div class="metric-row"><div class="metric-label"><span>2️⃣</span> Прибуток 2 рік</div><div class="metric-value positive" id="netYear2">0 ₴</div></div><div class="metric-row"><div class="metric-label"><span>3️⃣</span> Прибуток 3 рік</div><div class="metric-value positive" id="netYear3">0 ₴</div></div><div class="metric-row"><div class="metric-label"><span>🏆</span> <strong>Сумарно 3 роки</strong></div><div class="metric-value positive" id="totalNet3Years">0 ₴</div></div></div>
+</div>
+</div>
+
+<section class="section recommendations">
+<h2 class="section-title"><div class="section-title-icon">💡</div>Рекомендація</h2>
+<div class="recommendation-card" id="recommendationCard"><div class="recommendation-icon">✅</div><div class="recommendation-content"><h4 id="recommendationTitle">Висновок</h4><p id="recommendationText">Натисніть кнопку для розрахунку.</p></div></div>
+</section>
+</div>
+
+</div>
+</div>
+
+<script src="https://raw.githack.com/YOUR_USERNAME/YOUR_REPO/main/creatio-roi-calculator.js"></script>
