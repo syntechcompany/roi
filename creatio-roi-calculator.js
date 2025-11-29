@@ -1,6 +1,3 @@
-/* Creatio ROI Calculator - JavaScript */
-/* Host on GitHub, link in Webflow before </body> */
-
 (function() {
     const platformPrices = { growth: 750, enterprise: 1650, unlimited: 2550 };
     const portalCosts = { '0': 0, '250': 16667, '1000': 33333, '10000': 66667, '50000': 166667, '100000': 250000, '200000': 333333, 'unlimited': 500000 };

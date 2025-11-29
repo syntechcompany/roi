@@ -1,5 +1,18 @@
-/* Creatio ROI Calculator - Combined Styles & Scripts */
-/* Host this file on GitHub and link in Webflow */
+/* ==================== IFRAME OPTIMIZATION ==================== */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    overflow-y: auto;
+}
+
+/* Hide scrollbar but keep functionality */
+html::-webkit-scrollbar { width: 0; height: 0; }
+html { scrollbar-width: none; -ms-overflow-style: none; }
 
 /* ==================== CSS STYLES ==================== */
 
@@ -159,13 +172,57 @@
 .roi-calculator .recommendation-content h4 { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 8px; color: var(--success); }
 .roi-calculator .recommendation-content p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
 
+/* Tablet */
+@media (max-width: 1024px) {
+    .roi-calculator .container { padding: 30px 16px; }
+    .roi-calculator .platform-cards { grid-template-columns: 1fr; }
+    .roi-calculator .roi-summary { grid-template-columns: repeat(2, 1fr); }
+    .roi-calculator .metrics-grid { grid-template-columns: 1fr; }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
-    .roi-calculator .container { padding: 20px 16px; }
-    .roi-calculator .header h1 { font-size: 28px; }
+    .roi-calculator .container { padding: 20px 12px; }
+    .roi-calculator .header { margin-bottom: 30px; }
+    .roi-calculator .header h1 { font-size: 24px; }
+    .roi-calculator .header p { font-size: 14px; }
+    .roi-calculator .platform-card { padding: 20px; }
+    .roi-calculator .platform-title { font-size: 22px; }
     .roi-calculator .platform-price { font-size: 28px; }
-    .roi-calculator .user-quantity-section { flex-direction: column; text-align: center; }
-    .roi-calculator .total-item-value { font-size: 22px; }
+    .roi-calculator .platform-description { font-size: 13px; }
+    .roi-calculator .section { padding: 20px 16px; margin-bottom: 16px; }
+    .roi-calculator .section-title { font-size: 18px; margin-bottom: 16px; }
+    .roi-calculator .user-quantity-section { flex-direction: column; text-align: center; padding: 20px 16px; }
+    .roi-calculator .quantity-control { width: 100%; justify-content: center; }
+    .roi-calculator .product-grid { grid-template-columns: 1fr; }
+    .roi-calculator .roi-inputs-grid { grid-template-columns: 1fr; gap: 16px; }
+    .roi-calculator .total-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .roi-calculator .total-item { padding: 16px 12px; }
+    .roi-calculator .total-item-value { font-size: 20px; }
+    .roi-calculator .total-item-label { font-size: 11px; }
+    .roi-calculator .calculate-btn { padding: 16px 24px; font-size: 16px; margin: 20px 0; }
+    .roi-calculator .roi-summary { grid-template-columns: 1fr; gap: 16px; }
+    .roi-calculator .roi-card { padding: 20px; }
     .roi-calculator .roi-card-value { font-size: 28px; }
+    .roi-calculator .roi-card-title { font-size: 12px; }
+    .roi-calculator .metric-block { padding: 16px; }
+    .roi-calculator .metric-row { padding: 10px 0; }
+    .roi-calculator .metric-label { font-size: 13px; }
+    .roi-calculator .metric-value { font-size: 14px; }
+    .roi-calculator .recommendation-card { flex-direction: column; padding: 20px; gap: 16px; }
+    .roi-calculator .recommendation-icon { width: 48px; height: 48px; font-size: 24px; }
+    .roi-calculator .ai-banner { flex-direction: column; padding: 16px; gap: 8px; }
+    .roi-calculator .ai-banner-text { font-size: 14px; }
+}
+
+/* Small mobile */
+@media (max-width: 380px) {
+    .roi-calculator .container { padding: 16px 10px; }
+    .roi-calculator .header h1 { font-size: 20px; }
+    .roi-calculator .platform-title { font-size: 20px; }
+    .roi-calculator .platform-price { font-size: 24px; }
+    .roi-calculator .total-grid { grid-template-columns: 1fr; }
+    .roi-calculator .quantity-input { width: 80px; }
 }
 
 @media print {
